@@ -127,7 +127,7 @@ swagger-annotations = {group = "io.swagger", name = "swagger-annotations", versi
 swagger-models = {group = "io.swagger", name = "swagger-models", version = { strictly = "1.6.11" } }
 swagger-models-v3 = {group = "io.swagger.core.v3", name = "swagger-models", version = { strictly = "2.2.10" } }
 testng = {group = "org.testng", name = "testng", version = { strictly = "7.7.1" } }
-v3-swagger-annotations = {group = "io.swagger.core.v3", name = "swagger-annotations", version = { strictly = "2.2.9" } }
+v3-swagger-annotations = {group = "io.swagger.core.v3", name = "swagger-annotations", version = { strictly = "2.2.22" } }
 
 [bundles]
 bundles-gen-client-client = ["testng", "hamcrest"]
