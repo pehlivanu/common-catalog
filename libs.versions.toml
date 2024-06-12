@@ -123,7 +123,7 @@ springdoc-openapi-hateoas = {group = "org.springdoc", name = "springdoc-openapi-
 springdoc-openapi-starter-common = {group = "org.springdoc", name = "springdoc-openapi-starter-common", version = { strictly = "[2.1.0]" } }
 springdoc-openapi-webmvc-api = {group = "org.springdoc", name = "springdoc-openapi-starter-webmvc-api", version = { strictly = "[2.1.0]" } }
 springdoc-openapi-webmvc-ui = {group = "org.springdoc", name = "springdoc-openapi-starter-webmvc-ui", version = { strictly = "[2.1.0]" } }
-swagger-annotations = {group = "io.swagger", name = "swagger-annotations", version = { strictly = "1.6.11" } }
+swagger-annotations = {group = "io.swagger", name = "swagger-annotations", version = { strictly = "1.6.14" } }
 swagger-models = {group = "io.swagger", name = "swagger-models", version = { strictly = "1.6.11" } }
 swagger-models-v3 = {group = "io.swagger.core.v3", name = "swagger-models", version = { strictly = "2.2.10" } }
 testng = {group = "org.testng", name = "testng", version = { strictly = "7.7.1" } }
