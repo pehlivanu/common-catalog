@@ -53,7 +53,7 @@ kotlin-stdlib = {group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version
 logging-interceptor = {group = "com.squareup.okhttp3", name = "logging-interceptor", version = { strictly = "[4.12.0]" } }
 mapstruct-mapstruct = {group = "org.mapstruct", name = "mapstruct", version = { strictly = "[1.5.3.Final]" } }
 mapstruct-processor = {group = "org.mapstruct", name = "mapstruct-processor", version = { strictly = "[1.5.3.Final]" } }
-mongo-java-driver = {group = "org.mongodb", name = "mongo-java-driver", version = { strictly = "3.12.13" } }
+mongo-java-driver = {group = "org.mongodb", name = "mongo-java-driver", version = { strictly = "3.12.14" } }
 mysql-connector-j = {group = "com.mysql", name = "mysql-connector-j", version = { strictly = "[8.3.0]" } }
 netty-buffer = {group = "io.netty", name = "netty-buffer", version = { strictly = "[4.1.110.Final]" } }
 netty-codec = {group = "io.netty", name = "netty-codec", version = { strictly = "[4.1.110.Final]" } }
