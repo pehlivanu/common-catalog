@@ -1,0 +1,41 @@
+import org.gradle.api.internal.catalog.DependencyModel
+
+Map<String, Map<String, String>> libMaps = new HashMap<>()
+for ( DependencyModel aliasToDependency : catalog.versionCatalog.get().libraries.values() ) {
+    Map<String, String> group = libMaps.computeIfAbsent( aliasToDependency.getGroup(), s -> new HashMap<>() )
+    group.computeIfAbsent( aliasToDependency.getName(), s -> {
+        String strictVersion = aliasToDependency.version.strictVersion
+        if ( !strictVersion.contains( "[" ) && !strictVersion.contains( "]" ) &&
+             !strictVersion.contains( "(" ) && !strictVersion.contains( ")" ) ) {
+            return "[" + strictVersion + ", )"
+        }
+        return strictVersion
+    } )
+}
+ext.libMaps = libMaps;
+
+String getDependency( String group, String name ) {
+    return group + ":" + name + ":" + libMaps.get( group ).get( name )
+}
+
+dependencies {
+    constraints {
+//        api( group: 'exampleGroup', name: 'exampleName', version: '0.2.2' )
+//        api( getDependency( 'exampleGroup', 'exampleName' ) )
+        libMaps.forEach( ( group, names ) -> {
+            names.forEach( ( name, strictVersion ) -> {
+                api( group: group, name: name, version: strictVersion )
+//                {
+//                    version {
+//                        strictly strictVersion
+//                    }
+//                }
+            } )
+        } )
+    }
+}
+
+javaPlatform {
+    //By default Gradle will fail if a dependency in added in a platform.
+    //allowDependencies()
+}

@@ -1,0 +1,583 @@
+catalog {
+    def springVersion = '[3.0.10]'
+    def springDocVersion = '[2.1.0]'// update not possibile needs changes in Project.
+    def springSecurityVersion = '[6.2.1]'
+    def jackson_version = '[2.15.2]'
+    def queryDSLVersion = "[5.0.0]"
+    def mapstructVersion = "[1.5.3.Final]"
+
+    // declare the aliases, bundles and versions in this block
+    versionCatalog {
+
+//        plugin( "org.openapi.generator","org.openapi.generator" ).version( "7.1.0" )
+
+        // https://mvnrepository.com/artifact/io.spring.gradle/dependency-management-plugin
+        library('dependency-management-plugin-catalog', 'io.spring.gradle', 'dependency-management-plugin').version {
+            strictly '[1.1.4,)'
+        }
+
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jetty
+        library('spring-boot-starter-jetty', 'org.springframework.boot', 'spring-boot-starter-jetty').version {
+            strictly springVersion
+        }
+        //  https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
+        library('spring-boot-starter-starter', 'org.springframework.boot', 'spring-boot-starter').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+        library('spring-boot-starter-web', 'org.springframework.boot', 'spring-boot-starter-web').version {
+            strictly springVersion
+        }
+
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-cache
+        library('spring-boot-starter-cache', 'org.springframework.boot', 'spring-boot-starter-cache').version {
+            strictly springVersion
+        }
+
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+        library('spring-boot-starter-actuator', 'org.springframework.boot', 'spring-boot-starter-actuator').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jdbc
+        library('spring-boot-starter-data-jdbc', 'org.springframework.boot', 'spring-boot-starter-data-jdbc').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
+        library('spring-boot-starter-jdbc', 'org.springframework.boot', 'spring-boot-starter-jdbc').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+        library('spring-boot-starter-data-jpa', 'org.springframework.boot', 'spring-boot-starter-data-jpa').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-rest
+        library('spring-boot-starter-data-rest', 'org.springframework.boot', 'spring-boot-starter-data-rest').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb
+        library('spring-boot-starter-data-mongodb', 'org.springframework.boot', 'spring-boot-starter-data-mongodb').version {
+            strictly springVersion
+        }
+
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-hateoas
+        library('spring-boot-starter-hateoas', 'org.springframework.boot', 'spring-boot-starter-hateoas').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+        library('spring-boot-starter-security', 'org.springframework.boot', 'spring-boot-starter-security').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-quartz
+        library('spring-boot-starter-quartz', 'org.springframework.boot', 'spring-boot-starter-quartz').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-quartz
+        library('spring-boot-starter-validation', 'org.springframework.boot', 'spring-boot-starter-validation').version {
+            strictly springVersion
+        }
+
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-client
+        library('spring-boot-starter-oauth2-client', 'org.springframework.boot', 'spring-boot-starter-oauth2-client').version {
+            strictly springVersion
+        }
+        library('spring-security-oauth2-client', 'org.springframework.security', 'spring-security-oauth2-client').version {
+            strictly springSecurityVersion
+        }
+
+        library('spring-boot-starter-oauth2-resource-server', 'org.springframework.boot', 'spring-boot-starter-oauth2-resource-server').version {
+            strictly springVersion
+        }
+        library('spring-security-oauth2-resource-server', 'org.springframework.security', 'spring-security-oauth2-resource-server').version {
+            strictly springSecurityVersion
+        }
+        library('spring-security-oauth2-jose', 'org.springframework.security', 'spring-security-oauth2-jose').version {
+            strictly springSecurityVersion
+        }
+
+        // https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-client
+        library('spring-boot-admin-starter-client', 'de.codecentric', 'spring-boot-admin-starter-client').version {
+            strictly '3.1.1'
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+        library('spring-boot-devtools', 'org.springframework.boot', 'spring-boot-devtools').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor
+        library('spring-boot-configuration-processor', 'org.springframework.boot', 'spring-boot-configuration-processor').version {
+            strictly springVersion
+        }
+        library('spring-boot-starter-test', 'org.springframework.boot', 'spring-boot-starter-test').version {
+            strictly springVersion
+        }
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure
+        library('spring-boot-autoconfigure', 'org.springframework.boot', 'spring-boot-autoconfigure').version {
+            strictly springVersion
+        }
+        //https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons
+        library('spring-data-commons', 'org.springframework.data', 'spring-data-commons').version {
+            strictly springVersion
+        }
+
+        // https://mvnrepository.com/artifact/org.springframework.data/spring-data-rest-hal-explorer
+        library('spring-data-rest-hal-explorer', 'org.springframework.data', 'spring-data-rest-hal-explorer').version {
+            strictly '4.0.4'
+        }
+
+        // https://mvnrepository.com/artifact/org.testng/testng
+        library('testng', 'org.testng', 'testng').version {
+            strictly '7.7.1'
+        }
+        // https://mvnrepository.com/artifact/org.hamcrest/hamcrest
+        library('hamcrest', 'org.hamcrest', 'hamcrest').version {
+            strictly '2.2'
+        }
+
+        // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+        library('slf4j-api', 'org.slf4j', 'slf4j-api').version {
+            strictly '[2.0.7]'
+        }
+
+        // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
+        library('httpclient', 'org.apache.httpcomponents.client5', 'httpclient5').version {
+            strictly '5.2.1'
+        }
+
+        // https://mvnrepository.com/artifact/com.azure.spring/spring-cloud-azure-starter-active-directory
+        library('spring-cloud-azure-starter-active-directory', 'com.azure.spring', 'spring-cloud-azure-starter-active-directory').version {
+            strictly '5.11.0'
+        }
+
+        //// start transitive dependency without vulnerabilities
+
+        library('jakarta.xml.bind-api', 'jakarta.xml.bind', 'jakarta.xml.bind-api').version {
+            strictly '3.0.1'
+        }
+
+        library('kotlin-stdlib', 'org.jetbrains.kotlin', 'kotlin-stdlib').version {
+            strictly '1.6.20'
+        }
+
+        library('snakeyaml', 'org.yaml', 'snakeyaml').version {
+            strictly '[2.2]'
+        }
+
+        // https://mvnrepository.com/artifact/org.mozilla/rhino
+        library('rhino', 'org.mozilla', 'rhino').version {
+            strictly '[1.7.14]'
+        }
+
+        // https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit
+        library('org-eclipse-jgit', 'org.eclipse.jgit', 'org.eclipse.jgit').version {
+            strictly '[6.9.0.202403050737-r]'
+        }
+
+//        jetty-server
+        String orgEclipseJettyVersion = '[11.0.18]'
+        library('websocket-jetty-server', 'org.eclipse.jetty.websocket', 'websocket-jetty-server').version {
+            strictly orgEclipseJettyVersion
+        }
+        library('websocket-jakarta-server', 'org.eclipse.jetty.websocket', 'websocket-jakarta-server').version {
+            strictly orgEclipseJettyVersion
+        }
+        library('jetty-io', 'org.eclipse.jetty', 'jetty-io').version {
+            strictly orgEclipseJettyVersion
+        }
+        library('jetty-http', 'org.eclipse.jetty', 'jetty-http').version {
+            strictly orgEclipseJettyVersion
+        }
+        library('jetty-servlets', 'org.eclipse.jetty', 'jetty-servlets').version {
+            strictly orgEclipseJettyVersion
+        }
+        library('jetty-webapp', 'org.eclipse.jetty', 'jetty-webapp').version {
+            strictly orgEclipseJettyVersion
+        }
+        library('jetty-xml', 'org.eclipse.jetty', 'jetty-xml').version {
+            strictly orgEclipseJettyVersion
+        }
+        library('jetty-alpn-conscrypt-server', 'org.eclipse.jetty', 'jetty-alpn-conscrypt-server').version {
+            strictly orgEclipseJettyVersion
+        }
+        library('jetty-http2-server', 'org.eclipse.jetty.http2', 'http2-server').version {
+            strictly orgEclipseJettyVersion
+        }
+        library('http2-common', 'org.eclipse.jetty.http2', 'http2-common').version {
+            strictly orgEclipseJettyVersion
+        }
+        library('http2-hpack', 'org.eclipse.jetty.http2', 'http2-hpack').version {
+            strictly orgEclipseJettyVersion
+        }
+
+        library('openapi-generator', 'org.openapitools', 'openapi-generator').version {
+            strictly '7.1.0'
+        }
+
+        // https://mvnrepository.com/artifact/com.google.guava/guava
+        library('guava', 'com.google.guava', 'guava').version {
+            strictly '32.1.1-jre'
+        }
+
+        // https://mvnrepository.com/artifact/com.squareup.okio/okio
+        library('okio', 'com.squareup.okio', 'okio').version {
+            strictly '3.6.0'
+        }
+
+        // https://mvnrepository.com/artifact/com.squareup.okio/okio-jvm
+        library('okio-jvm', 'com.squareup.okio', 'okio-jvm').version {
+            strictly '3.6.0'
+        }
+
+        // https://mvnrepository.com/artifact/net.minidev/json-smart
+        library('json-smart', 'net.minidev', 'json-smart').version {
+            strictly '2.4.11'
+        }
+
+        // https://mvnrepository.com/artifact/org.eclipse.jetty.toolchain/jetty-jakarta-servlet-api
+        library('jetty-jakarta-servlet-api', 'org.eclipse.jetty.toolchain', 'jetty-jakarta-servlet-api').version {
+            strictly '5.0.2'
+        }
+
+        // https://mvnrepository.com/artifact/org.springframework.hateoas/spring-hateoas
+        library('spring-hateoas', 'org.springframework.hateoas', 'spring-hateoas').version {
+            strictly '2.1.2'
+        }
+
+        // https://mvnrepository.com/artifact/org.springframework/spring-core
+        library('spring-core', 'org.springframework', 'spring-core').version {
+            strictly '[6.0.14]' //[6.0.11]
+        }
+
+        // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+        library('spring-webmvc', 'org.springframework', 'spring-webmvc').version {
+            strictly '[6.0.14]'//[6.0.11]
+        }
+
+        // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+        library('spring-web', 'org.springframework', 'spring-web').version {
+            strictly '[6.0.14]'//[6.0.11]
+        }
+
+        library('spring-security-config', 'org.springframework.security', 'spring-security-config').version {
+            strictly springSecurityVersion
+        }
+
+        library('spring-security-core', 'org.springframework.security', 'spring-security-core').version {
+            strictly springSecurityVersion
+        }
+
+        library('spring-security-crypto', 'org.springframework.security', 'spring-security-crypto').version {
+            strictly springSecurityVersion
+        }
+
+        library('spring-security-web', 'org.springframework.security', 'spring-security-web').version {
+            strictly springSecurityVersion
+        }
+
+        library('spring-security-test', 'org.springframework.security', 'spring-security-test').version {
+            strictly springSecurityVersion
+        }
+
+        library('reactor-netty-http', 'io.projectreactor.netty', 'reactor-netty-http').version {
+            strictly '[1.1.19]'
+        }
+
+        library('reactor-netty-core', 'io.projectreactor.netty', 'reactor-netty-core').version {
+            strictly '[1.1.19]'
+        }
+
+        library('netty-buffer', 'io.netty', 'netty-buffer').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        library('netty-codec', 'io.netty', 'netty-codec').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        library('netty-codec-http', 'io.netty', 'netty-codec-http').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        library('netty-common', 'io.netty', 'netty-common').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        library('netty-codec-http2', 'io.netty', 'netty-codec-http2').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        library('netty-handler-proxy', 'io.netty', 'netty-handler-proxy').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        library('netty-handler', 'io.netty', 'netty-handler').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        library('netty-transport-native-epoll', 'io.netty', 'netty-transport-native-epoll').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        library('netty-transport-native-kqueue', 'io.netty', 'netty-transport-native-kqueue').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        library('netty-transport-native-unix-common', 'io.netty', 'netty-transport-native-unix-common').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        library('netty-resolver-dns-native-macos', 'io.netty', 'netty-resolver-dns-native-macos').version {
+            strictly '[4.1.110.Final]'
+        }
+
+        //// end transitive dependency without vulnerabilities
+
+
+//        start DB drivers
+        // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11
+        library('ojdbc11', 'com.oracle.database.jdbc', 'ojdbc11').version {
+            strictly '21.1.0.0'
+        }
+        // https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver/3.12.10
+        library('mongo-java-driver', 'org.mongodb', 'mongo-java-driver').version {
+            strictly '3.12.13'
+        }
+        // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+        library('mysql-connector-j', 'com.mysql', 'mysql-connector-j').version {
+            strictly '8.0.33'
+        }
+//        end  DB drivers
+
+//        start commons libs
+
+        // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+        library('commons-lang3', 'org.apache.commons', 'commons-lang3').version {
+            strictly '[3.2.1, 3.12.0['
+            prefer '3.12.0'
+        }
+        // https://mvnrepository.com/artifact/commons-io/commons-io
+        library('commons-io', 'commons-io', 'commons-io').version {
+            strictly '2.11.0'
+        }
+        // https://mvnrepository.com/artifact/commons-codec/commons-codec
+        library('commons-codec', 'commons-codec', 'commons-codec').version {
+            strictly '[1.14, 1.15['
+            prefer '1.15'
+        }
+        // https://mvnrepository.com/artifact/commons-codec/commons-codec
+        library('commons-collections4', 'org.apache.commons', 'commons-collections4').version {
+            strictly '4.4'
+        }
+//        end commons libs
+
+
+//        start swager endpoint discovery and ui libs
+        library('springdoc-openapi-starter-common', 'org.springdoc', 'springdoc-openapi-starter-common').version {
+            strictly springDocVersion
+        }
+        library('springdoc-openapi-webmvc-ui', 'org.springdoc', 'springdoc-openapi-starter-webmvc-ui').version {
+            strictly springDocVersion
+        }
+        library('springdoc-openapi-webmvc-api', 'org.springdoc', 'springdoc-openapi-starter-webmvc-api').version {
+            strictly springDocVersion
+        }
+        library('springdoc-openapi-hateoas', 'org.springdoc', 'springdoc-openapi-hateoas').version {
+            strictly '1.7.0'
+        }
+        library('v3-swagger-annotations', 'io.swagger.core.v3', 'swagger-annotations').version {
+            strictly '2.2.9'
+        }
+        library('swagger-annotations', 'io.swagger', 'swagger-annotations').version {
+            strictly '1.6.11'
+        }
+
+//        end swager endpoint discovery and ui libs
+
+
+//     start libs needed for generated client.
+
+        library('gson-gson-parent', 'com.google.code.gson', 'gson-parent').version {
+            strictly '2.10.1'
+        }
+        library('gson-gson', 'com.google.code.gson', 'gson').version {
+            strictly '2.10.1'
+        }
+        library('okhttp', 'com.squareup.okhttp3', 'okhttp').version {
+            strictly '4.11.0'
+        }
+        library('logging-interceptor', 'com.squareup.okhttp3', 'logging-interceptor').version {
+            strictly '4.11.0'
+        }
+        library('jakarta-annotation-api', 'jakarta.annotation', 'jakarta.annotation-api').version {
+            strictly '2.1.1'
+        }
+        library('jakarta-ws-rs-api', 'jakarta.ws.rs', 'jakarta.ws.rs-api').version {
+            strictly '3.1.0'
+        }
+
+        library('gson-fire', 'io.gsonfire', 'gson-fire').version {
+            strictly '1.8.5'
+        }
+        library('jsr305', 'com.google.code.findbugs', 'jsr305').version {
+            strictly '3.0.2'
+        }
+        library('jackson-core', 'com.fasterxml.jackson.core', 'jackson-core').version {
+            strictly jackson_version
+        }
+        library('jackson-annotations', 'com.fasterxml.jackson.core', 'jackson-annotations').version {
+            strictly jackson_version
+        }
+        library('jackson-databind', 'com.fasterxml.jackson.core', 'jackson-databind').version {
+            strictly jackson_version
+        }
+        library('jackson-jaxrs-json-provider', 'com.fasterxml.jackson.jaxrs', 'jackson-jaxrs-json-provider').version {
+            strictly jackson_version
+        }
+        library('jackson-module-parameter-names', 'com.fasterxml.jackson.module', 'jackson-module-parameter-names').version {
+            strictly jackson_version
+        }
+        library('jackson-dataformat-properties', 'com.fasterxml.jackson.dataformat', 'jackson-dataformat-properties').version {
+            strictly jackson_version
+        }
+        library('jackson-datatype-threetenbp', 'com.github.joschi.jackson', 'jackson-datatype-threetenbp').version {
+            strictly "2.12.5"
+        }
+        library('junit', 'org.junit.jupiter', 'junit-jupiter-api').version {
+            strictly "5.9.3"
+        }
+        library('swagger-models', 'io.swagger', 'swagger-models').version {
+            strictly "1.6.11"
+        }
+        library('swagger-models-v3', 'io.swagger.core.v3', 'swagger-models').version {
+            strictly "2.2.10"
+        }
+        library('caffeine', 'com.github.ben-manes.caffeine', 'caffeine').version {
+            strictly "2.9.3"
+        }
+        library('jmustache', 'com.samskivert', 'jmustache').version {
+            strictly "1.15"
+        }
+
+//     end libs needed for generated client.
+
+//      start QueryDSL
+        library('querydsl-core', 'com.querydsl', 'querydsl-core').version {
+            strictly queryDSLVersion
+        }
+
+        library('querydsl-jpa', 'com.querydsl', 'querydsl-jpa').version {
+            strictly queryDSLVersion
+        }
+        library('querydsl-apt', 'com.querydsl', 'querydsl-apt').version {
+            strictly queryDSLVersion
+        }
+        library('querydsl-mongodb', 'com.querydsl', 'querydsl-mongodb').version {
+            strictly queryDSLVersion
+        }
+//      end  qeeryDSL libs
+
+        //      start mapstruct libs
+        library('mapstruct-mapstruct', 'org.mapstruct', 'mapstruct').version {
+            strictly mapstructVersion
+        }
+        library('mapstruct-processor', 'org.mapstruct', 'mapstruct-processor').version {
+            strictly mapstructVersion
+        }
+        //      end  mapstruct libs
+
+        //      start jakarta libs
+        library('jakarta-persistence', 'jakarta.persistence', 'jakarta.persistence-api').version {
+            strictly "3.1.0"
+        }
+        library('jakarta-validation', 'jakarta.validation', 'jakarta.validation-api').version {
+            strictly "3.0.2"
+        }
+        library('jakarta-transaction', 'jakarta.transaction', 'jakarta.transaction-api').version {
+            strictly "2.0.1"
+        }
+
+        library('jakarta-inject', 'jakarta.inject', 'jakarta.inject-api').version {
+            strictly "2.0.1"
+        }
+        //      end jakarta libs
+
+
+        library('spring-data-querydsl-value-operators', 'org.bitbucket.gt_tech', 'spring-data-querydsl-value-operators').version {
+            strictly "4.0.0"
+        }
+
+        library('h2', 'com.h2database', 'h2').version {
+            strictly "2.2.224"
+        }
+
+// start DAT Libs
+        library('common-spring', 'de.dat', 'common.spring').version {
+            strictly "2.0.3"
+        }
+
+        library('permission-provider', 'de.dat.core', 'permission-provider').version {
+            strictly "1.0.3"
+        }
+
+// end DAT Libs
+
+        bundle('gen-client-client', ['gson-gson-parent',
+                                     'gson-gson',
+                                     'okhttp',
+                                     'logging-interceptor',
+                                     'jakarta-annotation-api',
+                                     'jakarta-ws-rs-api',
+                                     'gson-fire',
+                                     'swagger-annotations',
+                                     'v3-swagger-annotations',
+                                     'jsr305',
+                                     'jackson-core',
+                                     'jackson-annotations',
+                                     'jackson-databind',
+                                     'jackson-jaxrs-json-provider',
+                                     'jackson-datatype-threetenbp',
+                                     'swagger-models',
+                                     'swagger-models-v3',
+//                                      'guava',
+                                     'caffeine',
+                                     'jmustache',
+                                     'junit'])
+
+        bundle('gen-client-test', ['junit'])
+
+        bundle('spring-boot-starter', ['spring-boot-starter-jetty',
+                                       'spring-boot-starter-starter',
+                                       'spring-boot-starter-web',
+                                       'spring-boot-starter-hateoas',
+                                       'spring-boot-starter-actuator'])
+
+        bundle('spring-boot-db', ['spring-boot-starter-data-jpa',
+                                  'spring-boot-starter-data-rest',
+                                  'spring-boot-starter-data-jdbc',
+                                  'spring-boot-starter-jdbc'])
+
+        bundle('spring-boot-mongo-db', ['spring-boot-starter-data-rest',
+                                        'spring-boot-starter-data-mongodb'])
+
+        bundle('commons', ['commons-lang3',
+                           'commons-io',
+                           'commons-codec',
+                           'commons-collections4'])
+
+        bundle('springdoc', ['springdoc-openapi-starter-common',
+                             'springdoc-openapi-webmvc-ui',
+                             //'springdoc-openapi-webmvc-api',
+                             'springdoc-openapi-hateoas',
+                             "swagger-annotations",
+                             "v3-swagger-annotations"])
+
+        bundle("queryDsl-implementation", ["jakarta-annotation-api", "common-spring"])
+        //, "querydsl-jpa", "querydsl-apt"
+        bundle("queryDsl-annotationProcessor", ["jakarta-annotation-api"])
+
+        bundle('http2', ['jetty-http2-server',
+                         'jetty-alpn-conscrypt-server'])
+
+        bundle('test', ['testng', 'hamcrest', 'spring-boot-starter-test'])
+        bundle('testNg', ['testng', 'hamcrest'])
+        bundle('bundles.gen.client.client', ['testng', 'hamcrest'])
+    }
+}

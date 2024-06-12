@@ -1,0 +1,53 @@
+plugins {
+    id 'version-catalog'
+    id 'java-platform'
+    id 'maven-publish'
+}
+
+
+
+group = 'de.dat'
+
+if ( file( "build/generated/datBase.gradle" ).isFile() ) {
+    apply from: 'build/generated/datBase.gradle'
+}
+
+publishing {
+    publications {
+        javaPlatform( MavenPublication ) {
+            from components.javaPlatform
+        }
+// Not neede because we add the configuration later to the javaPlatform
+//        versionCatalog( MavenPublication ) {
+//            from components.versionCatalog
+//        }
+    }
+}
+//add catalog configuration Variant to java platform.
+AdhocComponentWithVariants myJavaPlatform = (AdhocComponentWithVariants) project.components.findByName("javaPlatform")
+Action<? super ConfigurationVariantDetails> action = new Action<ConfigurationVariantDetails>() {
+    @Override
+    void execute( ConfigurationVariantDetails configurationVariantDetails ) {
+        // The behavior of the action is the same as the behavior of the versionCatalog plugin.
+        // dependencies for this variant are considered compile dependencies
+        configurationVariantDetails.mapToMavenScope("compile")
+        // and also optional dependencies, because we don't want them to leak
+        configurationVariantDetails.mapToOptional()
+    }
+}
+myJavaPlatform.addVariantsFromConfiguration( project.configurations.getByName( "versionCatalogElements" ), action)
+
+if ( file( "catalog.gradle" ).isFile() ) {
+    apply from: 'catalog.gradle'
+}
+if ( file( "platform.gradle" ).isFile() ) {
+    apply from: 'platform.gradle'
+}
+
+
+// Deletes the toml file before a build is performed. Gradle does not always recognize that the toml file needs to be rebuilt.
+task deleteTomlFile(type: Delete) {
+    delete files("${project.buildDir}/version-catalog/libs.versions.toml")
+    group = "build"
+}
+publishToMavenLocal.dependsOn  deleteTomlFile
