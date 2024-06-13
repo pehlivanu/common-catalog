@@ -103,7 +103,7 @@ spring-boot-starter-starter = {group = "org.springframework.boot", name = "sprin
 spring-boot-starter-test = {group = "org.springframework.boot", name = "spring-boot-starter-test", version = { strictly = "[3.2.3]" } }
 spring-boot-starter-validation = {group = "org.springframework.boot", name = "spring-boot-starter-validation", version = { strictly = "[3.2.3]" } }
 spring-boot-starter-web = {group = "org.springframework.boot", name = "spring-boot-starter-web", version = { strictly = "[3.2.3]" } }
-spring-cloud-azure-starter-active-directory = {group = "com.azure.spring", name = "spring-cloud-azure-starter-active-directory", version = { strictly = "5.11.0" } }
+spring-cloud-azure-starter-active-directory = {group = "com.azure.spring", name = "spring-cloud-azure-starter-active-directory", version = { strictly = "5.13.0" } }
 spring-core = {group = "org.springframework", name = "spring-core", version = { strictly = "[6.1.4]" } }
 spring-data-commons = {group = "org.springframework.data", name = "spring-data-commons", version = { strictly = "[3.2.3]" } }
 spring-data-querydsl-value-operators = {group = "org.bitbucket.gt_tech", name = "spring-data-querydsl-value-operators", version = { strictly = "4.0.0" } }
