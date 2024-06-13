@@ -14,7 +14,7 @@ commons-lang3 = {group = "org.apache.commons", name = "commons-lang3", version =
 dependency-management-plugin-catalog = {group = "io.spring.gradle", name = "dependency-management-plugin", version = { strictly = "[1.1.4,)" } }
 gson-fire = {group = "io.gsonfire", name = "gson-fire", version = { strictly = "1.8.5" } }
 gson-gson = {group = "com.google.code.gson", name = "gson", version = { strictly = "2.10.1" } }
-gson-gson-parent = {group = "com.google.code.gson", name = "gson-parent", version = { strictly = "2.10.1" } }
+gson-gson-parent = {group = "com.google.code.gson", name = "gson-parent", version = { strictly = "2.11.0" } }
 guava = {group = "com.google.guava", name = "guava", version = { strictly = "32.1.1-jre" } }
 h2 = {group = "com.h2database", name = "h2", version = { strictly = "2.2.224" } }
 hamcrest = {group = "org.hamcrest", name = "hamcrest", version = { strictly = "[2.2]" } }
