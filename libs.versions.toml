@@ -23,7 +23,7 @@ jackson-annotations = {group = "com.fasterxml.jackson.core", name = "jackson-ann
 jackson-core = {group = "com.fasterxml.jackson.core", name = "jackson-core", version = { strictly = "[2.15.4]" } }
 jackson-databind = {group = "com.fasterxml.jackson.core", name = "jackson-databind", version = { strictly = "[2.15.4]" } }
 jackson-dataformat-properties = {group = "com.fasterxml.jackson.dataformat", name = "jackson-dataformat-properties", version = { strictly = "[2.15.4]" } }
-jackson-datatype-threetenbp = {group = "com.github.joschi.jackson", name = "jackson-datatype-threetenbp", version = { strictly = "2.12.5" } }
+jackson-datatype-threetenbp = {group = "com.github.joschi.jackson", name = "jackson-datatype-threetenbp", version = { strictly = "2.15.2" } }
 jackson-jaxrs-json-provider = {group = "com.fasterxml.jackson.jaxrs", name = "jackson-jaxrs-json-provider", version = { strictly = "[2.15.4]" } }
 jackson-module-parameter-names = {group = "com.fasterxml.jackson.module", name = "jackson-module-parameter-names", version = { strictly = "[2.15.4]" } }
 jakarta-annotation-api = {group = "jakarta.annotation", name = "jakarta.annotation-api", version = { strictly = "2.1.1" } }
